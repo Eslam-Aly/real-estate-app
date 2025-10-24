@@ -6,11 +6,16 @@
       "src": "api/index.js",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["api/controllers/**", "api/models/**", "api/routes/**", "api/utils/**"]
+        "includeFiles": [
+          "api/controllers/**",
+          "api/models/**",
+          "api/routes/**",
+          "api/utils/**"
+        ]
       }
     }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "api/index.js" }
+    { "src": "/api/(.*)", "dest": "/api/index.js" }
   ]
 }
