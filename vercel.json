@@ -1,0 +1,18 @@
+{
+  "functions": {
+    "api/index.js": {
+      "runtime": "nodejs18.x",
+      "maxDuration": 10,
+      "includeFiles": [
+        "api/controllers/**",
+        "api/models/**",
+        "api/routes/**",
+        "api/utils/**",
+        "api/seeds/**"
+      ]
+    }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/index.js" }
+  ]
+}
