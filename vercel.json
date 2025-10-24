@@ -1,12 +1,8 @@
 {
-  "functions": {
-    "api/index.js": {
-      "runtime": "nodejs18.x",
-      "maxDuration": 10,
-      "includeFiles": "api/**"
-    }
-  },
-  "routes": [
-    { "src": "/api/(.*)", "dest": "/api/index.js" }
+  "buildCommand": "npm install && npm run build --prefix client",
+  "outputDirectory": "client/dist",
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/(.*)", "destination": "/client/dist/$1" }
   ]
 }
